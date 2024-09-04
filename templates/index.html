@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VK Link Shortener</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        input[type="file"] { margin-bottom: 20px; }
+        button { padding: 10px 15px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Сокращение ссылок через VK API</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx" required>
+        <button type="submit">Загрузить</button>
+    </form>
+</body>
+</html>
