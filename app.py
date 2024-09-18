@@ -21,7 +21,7 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 
 def get_method_url(method_name: str) -> str:
-    return "https://api.vk.com/method" + f"/{method_name}"
+    return "https://api.vk.com/method" + f"/{method_name}/"
 
 
 def shorten_link(link: str) -> Union[str, None]:
@@ -35,7 +35,7 @@ def shorten_link(link: str) -> Union[str, None]:
         get_method_url("utils.getShortLink"),
         params=params
     )
-    if response.status_code == 200:
+    if response.status_code == 200 and response.json().get('response'):
         return response.json().get('response').get('short_url')
     return None
 
